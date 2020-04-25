@@ -1,0 +1,13 @@
+#Replacing Numeric N/A Values With Mean Values From Non-missing Data.
+organics.df$DemAge[is.na(organics.df$DemAge)] <- mean(organics.df$DemAge, na.rm = TRUE)
+organics.df$DemAffl[is.na(organics.df$DemAffl)] <- mean(organics.df$DemAffl, na.rm = TRUE)
+organics.df$DemCluster[is.na(organics.df$DemCluster)] <- mean(organics.df$DemCluster, na.rm = TRUE)
+organics.df$PromTime[is.na(organics.df$PromTime)] <- mean(organics.df$PromTime, na.rm = TRUE)
+organics.df$PromSpend[is.na(organics.df$PromSpend)] <- mean(organics.df$PromSpend, nna.rm = TRUE)
+
+#Replacing Categorical N/A Values with Common Values From Non-missing Data
+organics.df$DemClusterGroup[organics.df$DemClusterGroup == ""] <-  "C"
+organics.df$DemGender[organics.df$DemGender == ""] <- "F"
+organics.df$DemReg[organics.df$DemReg == ""] <- "South East"
+organics.df$DemTVReg[organics.df$DemTVReg == ""] <- "London"
+organics.df$PromClass[organics.df$PromClass == ""] <- "Silver"
